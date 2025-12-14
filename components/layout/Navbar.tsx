@@ -19,11 +19,13 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-primary">The Pharma Consultant</span>
+          <Link href="/" className="flex items-center space-x-2 group">
+            <span className="text-xl font-bold text-foreground group-hover:text-secondary transition-colors">
+              The Pharma Consultant
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,19 +34,19 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                className="text-sm font-medium text-foreground/80 transition-colors hover:text-secondary"
               >
                 {link.label}
               </Link>
             ))}
-            <Button asChild size="sm">
+            <Button asChild size="sm" className="bg-secondary hover:bg-secondary/90">
               <Link href="/contact">Get Started</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-foreground hover:text-secondary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -58,19 +60,19 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-border py-4">
+          <div className="md:hidden border-t border-border/50 py-4 bg-muted/30">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                  className="text-sm font-medium text-foreground/80 transition-colors hover:text-secondary"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button asChild size="sm" className="w-fit">
+              <Button asChild size="sm" className="w-fit bg-secondary hover:bg-secondary/90">
                 <Link href="/contact">Get Started</Link>
               </Button>
             </div>

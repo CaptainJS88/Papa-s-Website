@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const metrics = [
-    { value: "35++", label: "Years Experience", icon: <Award className="h-8 w-8 text-secondary" /> },
+    { value: "35+", label: "Years Experience", icon: <Award className="h-8 w-8 text-secondary" /> },
     { value: "Global", label: "Regulatory Expertise", icon: <Globe className="h-8 w-8 text-secondary" /> },
     { value: "100+", label: "Projects Completed", icon: <TrendingUp className="h-8 w-8 text-secondary" /> },
     { value: "50+", label: "Clients Served", icon: <Users className="h-8 w-8 text-secondary" /> },
@@ -30,7 +30,7 @@ export default function HomePage() {
       />
 
       {/* Bio Section */}
-      <section className="py-20 bg-muted/35+">
+      <section className="py-24 md:py-32 bg-muted/50">
         <Container>
           <div className="max-w-4xl mx-auto">
             <SectionHeader
@@ -42,14 +42,14 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20">
+      <section className="py-24 md:py-32">
         <Container>
           <SectionHeader
             title="Comprehensive Consulting Services"
             subtitle="What We Offer"
             description="End-to-end support for your pharmaceutical operations, from regulatory strategy to manufacturing optimization."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {services.slice(0, 3).map((service) => (
               <ServiceCard
                 key={service.id}
@@ -60,22 +60,22 @@ export default function HomePage() {
               />
             ))}
           </div>
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <a
               href="/services"
-              className="text-primary hover:text-primary/80 font-medium inline-flex items-center"
+              className="text-secondary hover:text-secondary/80 font-semibold text-lg inline-flex items-center group transition-colors"
             >
               View All Services
-              <span className="ml-2">→</span>
+              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </div>
         </Container>
       </section>
 
       {/* Metrics Section */}
-      <section className="py-20 bg-muted/35+">
+      <section className="py-24 md:py-32 bg-muted/50">
         <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {metrics.map((metric, index) => (
               <MetricCard
                 key={index}
@@ -89,7 +89,7 @@ export default function HomePage() {
       </section>
 
       {/* Logos Section */}
-      <section className="py-20">
+      <section className="py-24 md:py-32">
         <Container>
           <SectionHeader
             title="Trusted By Industry Leaders"
@@ -97,13 +97,13 @@ export default function HomePage() {
             description="Working with pharmaceutical companies, biotech firms, and CROs worldwide."
             align="center"
           />
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-70">
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="h-16 bg-muted rounded-lg flex items-center justify-center"
+                className="h-20 bg-muted rounded-lg flex items-center justify-center border border-border/50 hover:border-secondary/50 transition-colors"
               >
-                <span className="text-muted-foreground text-sm">Client Logo {i}</span>
+                <span className="text-muted-foreground text-sm font-medium">Client Logo {i}</span>
               </div>
             ))}
           </div>

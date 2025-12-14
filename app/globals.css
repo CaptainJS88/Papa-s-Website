@@ -4,19 +4,20 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 10% 20%;
-    --primary: 200 100% 25%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 180 50% 50%;
+    /* Dark Slate & Emerald Theme */
+    --background: 210 30% 9%; /* #0f1419 - Dark slate background */
+    --foreground: 210 20% 95%; /* #f1f5f9 - Light text */
+    --primary: 210 20% 35%; /* #475569 - Slate blue primary */
+    --primary-foreground: 210 20% 95%;
+    --secondary: 160 84% 39%; /* #10b981 - Emerald accent */
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 20% 96%;
-    --muted-foreground: 220 10% 40%;
-    --accent: 180 50% 50%;
+    --muted: 210 25% 15%; /* #1a1f24 - Darker sections */
+    --muted-foreground: 210 15% 65%; /* #94a3b8 - Muted text */
+    --accent: 160 84% 39%; /* Emerald */
     --accent-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 200 100% 25%;
+    --border: 210 25% 20%; /* Darker borders */
+    --input: 210 25% 20%;
+    --ring: 160 84% 39%; /* Emerald ring */
   }
 }
 
@@ -37,6 +38,24 @@
   
   .animate-on-scroll.visible {
     @apply opacity-100 translate-y-0;
+  }
+}
+
+@keyframes slideFade {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
   }
 }
 

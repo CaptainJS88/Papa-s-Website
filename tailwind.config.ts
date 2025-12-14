@@ -13,24 +13,24 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(200, 100%, 25%)", // Navy
-          foreground: "hsl(0, 0%, 100%)",
+          DEFAULT: "hsl(210, 20%, 35%)", // Slate blue
+          foreground: "hsl(210, 20%, 95%)",
         },
         secondary: {
-          DEFAULT: "hsl(180, 50%, 50%)", // Teal accent
+          DEFAULT: "hsl(160, 84%, 39%)", // Emerald
           foreground: "hsl(0, 0%, 100%)",
         },
         muted: {
-          DEFAULT: "hsl(210, 20%, 96%)", // Soft grey
-          foreground: "hsl(220, 10%, 40%)",
+          DEFAULT: "hsl(210, 25%, 15%)", // Dark sections
+          foreground: "hsl(210, 15%, 65%)",
         },
         accent: {
-          DEFAULT: "hsl(180, 50%, 50%)",
+          DEFAULT: "hsl(160, 84%, 39%)", // Emerald
           foreground: "hsl(0, 0%, 100%)",
         },
-        border: "hsl(220, 13%, 91%)",
-        input: "hsl(220, 13%, 91%)",
-        ring: "hsl(200, 100%, 25%)",
+        border: "hsl(210, 25%, 20%)",
+        input: "hsl(210, 25%, 20%)",
+        ring: "hsl(160, 84%, 39%)", // Emerald
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -38,6 +38,8 @@ const config: Config = {
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.5s ease-out",
+        "slide-fade": "slideFade 8s ease-in-out infinite",
+        "zoom-in": "zoomIn 8s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -47,6 +49,14 @@ const config: Config = {
         slideUp: {
           "0%": { transform: "translateY(20px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        slideFade: {
+          "0%, 100%": { opacity: "0" },
+          "10%, 90%": { opacity: "1" },
+        },
+        zoomIn: {
+          "0%": { transform: "scale(1.1)" },
+          "100%": { transform: "scale(1)" },
         },
       },
     },
