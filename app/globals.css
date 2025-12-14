@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 10% 20%;
+    --primary: 200 100% 25%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 50% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 180 50% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 200 100% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-4 transition-all duration-700;
+  }
+  
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
