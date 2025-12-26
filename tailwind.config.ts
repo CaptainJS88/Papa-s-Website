@@ -13,24 +13,24 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(210, 20%, 35%)", // Slate blue
-          foreground: "hsl(210, 20%, 95%)",
+          DEFAULT: "hsl(0, 0%, 100%)", // White
+          foreground: "hsl(0, 0%, 0%)",
         },
         secondary: {
-          DEFAULT: "hsl(160, 84%, 39%)", // Emerald
-          foreground: "hsl(0, 0%, 100%)",
+          DEFAULT: "hsl(0, 0%, 100%)", // White
+          foreground: "hsl(0, 0%, 0%)",
         },
         muted: {
-          DEFAULT: "hsl(210, 25%, 15%)", // Dark sections
-          foreground: "hsl(210, 15%, 65%)",
+          DEFAULT: "hsl(0, 0%, 5%)", // Very dark
+          foreground: "hsl(0, 0%, 80%)",
         },
         accent: {
-          DEFAULT: "hsl(160, 84%, 39%)", // Emerald
-          foreground: "hsl(0, 0%, 100%)",
+          DEFAULT: "hsl(0, 0%, 100%)", // White
+          foreground: "hsl(0, 0%, 0%)",
         },
-        border: "hsl(210, 25%, 20%)",
-        input: "hsl(210, 25%, 20%)",
-        ring: "hsl(160, 84%, 39%)", // Emerald
+        border: "hsl(0, 0%, 100%)", // White
+        input: "hsl(0, 0%, 100%)",
+        ring: "hsl(0, 0%, 100%)", // White
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

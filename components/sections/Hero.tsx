@@ -105,8 +105,6 @@ export function Hero({
             />
             {/* Dark gradient overlay for text readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-            {/* Additional emerald accent overlay */}
-            <div className="absolute inset-0 bg-secondary/5" />
           </div>
         ))}
       </div>
@@ -119,7 +117,7 @@ export function Hero({
             <span className="block mb-4">{slides[currentSlide].headline || headline}</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed">
             {slides[currentSlide].subheadline || subheadline}
           </p>
 
@@ -128,7 +126,7 @@ export function Hero({
             <Button 
               asChild 
               size="lg" 
-              className="group bg-secondary hover:bg-secondary/90 text-white px-8 py-6 text-lg font-semibold shadow-lg shadow-secondary/20 hover:shadow-secondary/40 transition-all duration-300 hover:scale-105"
+              className="group bg-foreground hover:bg-foreground/90 text-background px-8 py-6 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105"
             >
               <Link href={ctaLink}>
                 {ctaText}
@@ -139,7 +137,7 @@ export function Hero({
               asChild 
               variant="outline" 
               size="lg"
-              className="border-2 border-foreground/30 hover:border-secondary bg-background/20 backdrop-blur-sm text-foreground hover:text-secondary px-8 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="border-2 border-foreground hover:border-foreground bg-background text-foreground hover:bg-foreground hover:text-background px-8 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105"
             >
               <Link href="/about">Learn More</Link>
             </Button>
@@ -150,14 +148,14 @@ export function Hero({
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background/20 backdrop-blur-sm border border-foreground/20 hover:bg-secondary/20 hover:border-secondary text-foreground hover:text-secondary transition-all duration-300"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background border border-foreground hover:bg-foreground hover:text-background transition-all duration-300"
         aria-label="Previous slide"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background/20 backdrop-blur-sm border border-foreground/20 hover:bg-secondary/20 hover:border-secondary text-foreground hover:text-secondary transition-all duration-300"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background border border-foreground hover:bg-foreground hover:text-background transition-all duration-300"
         aria-label="Next slide"
       >
         <ChevronRight className="h-6 w-6" />
@@ -172,8 +170,8 @@ export function Hero({
             className={cn(
               "h-2 rounded-full transition-all duration-300",
               index === currentSlide
-                ? "w-8 bg-secondary shadow-lg shadow-secondary/50"
-                : "w-2 bg-foreground/30 hover:bg-foreground/50"
+                ? "w-8 bg-foreground shadow-lg"
+                : "w-2 bg-foreground hover:bg-foreground"
             )}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -182,10 +180,10 @@ export function Hero({
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 right-8 z-30 hidden md:block">
-        <div className="flex flex-col items-center gap-2 text-foreground/60">
+        <div className="flex flex-col items-center gap-2 text-foreground">
           <span className="text-sm font-medium">Scroll</span>
-          <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-secondary rounded-full animate-bounce" />
+          <div className="w-6 h-10 border-2 border-foreground rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-3 bg-foreground rounded-full animate-bounce" />
           </div>
         </div>
       </div>

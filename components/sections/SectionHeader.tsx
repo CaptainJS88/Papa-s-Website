@@ -25,7 +25,7 @@ export function SectionHeader({
   return (
     <div className={cn("max-w-3xl space-y-4", alignClasses[align], className)}>
       {subtitle && (
-        <p className="text-sm font-semibold text-secondary uppercase tracking-wider">
+        <p className="text-sm font-semibold text-foreground uppercase tracking-wider">
           {subtitle}
         </p>
       )}
@@ -33,7 +33,7 @@ export function SectionHeader({
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-muted-foreground">
+        <p className="text-lg text-foreground">
           {description}
         </p>
       )}

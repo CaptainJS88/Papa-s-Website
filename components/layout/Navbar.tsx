@@ -19,7 +19,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80">
+    <nav className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2 group">
@@ -34,7 +34,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-secondary"
+                className="text-sm font-medium text-foreground transition-colors hover:text-secondary"
               >
                 {link.label}
               </Link>
@@ -60,13 +60,13 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden border-t border-border/50 py-4 bg-muted/30">
+          <div className="md:hidden border-t border-border py-4 bg-muted">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-foreground/80 transition-colors hover:text-secondary"
+                  className="text-sm font-medium text-foreground transition-colors hover:text-secondary"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

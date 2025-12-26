@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const metrics = [
-    { value: "35+", label: "Years Experience", icon: <Award className="h-8 w-8 text-secondary" /> },
-    { value: "Global", label: "Regulatory Expertise", icon: <Globe className="h-8 w-8 text-secondary" /> },
-    { value: "100+", label: "Projects Completed", icon: <TrendingUp className="h-8 w-8 text-secondary" /> },
-    { value: "50+", label: "Clients Served", icon: <Users className="h-8 w-8 text-secondary" /> },
+    { value: "35+", label: "Years Experience", icon: <Award className="h-8 w-8 text-foreground" /> },
+    { value: "Global", label: "Regulatory Expertise", icon: <Globe className="h-8 w-8 text-foreground" /> },
+    { value: "100+", label: "Projects Completed", icon: <TrendingUp className="h-8 w-8 text-foreground" /> },
+    { value: "50+", label: "Clients Served", icon: <Users className="h-8 w-8 text-foreground" /> },
   ];
 
   return (
@@ -30,7 +30,7 @@ export default function HomePage() {
       />
 
       {/* Bio Section */}
-      <section className="py-24 md:py-32 bg-muted/50">
+      <section className="py-24 md:py-32 bg-background border-t border-b border-border">
         <Container>
           <div className="max-w-4xl mx-auto">
             <SectionHeader
@@ -42,7 +42,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32 border-t border-b border-border">
         <Container>
           <SectionHeader
             title="Comprehensive Consulting Services"
@@ -63,7 +63,7 @@ export default function HomePage() {
           <div className="text-center mt-16">
             <a
               href="/services"
-              className="text-secondary hover:text-secondary/80 font-semibold text-lg inline-flex items-center group transition-colors"
+              className="text-foreground hover:text-foreground/80 font-semibold text-lg inline-flex items-center group transition-colors"
             >
               View All Services
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -73,7 +73,7 @@ export default function HomePage() {
       </section>
 
       {/* Metrics Section */}
-      <section className="py-24 md:py-32 bg-muted/50">
+      <section className="py-24 md:py-32 bg-background border-t border-b border-border">
         <Container>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {metrics.map((metric, index) => (
@@ -97,11 +97,11 @@ export default function HomePage() {
             description="Working with pharmaceutical companies, biotech firms, and CROs worldwide."
             align="center"
           />
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-70">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="h-20 bg-muted rounded-lg flex items-center justify-center border border-border/50 hover:border-secondary/50 transition-colors"
+                className="h-20 bg-muted rounded-lg flex items-center justify-center border border-border hover:border-foreground transition-colors"
               >
                 <span className="text-muted-foreground text-sm font-medium">Client Logo {i}</span>
               </div>
